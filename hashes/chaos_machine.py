@@ -1,5 +1,6 @@
 """example of simple chaos machine"""
 from __future__ import print_function
+import secrets
 
 try:
   input = raw_input  # Python 2
@@ -89,10 +90,7 @@ def reset():
 
 # Initialization
 reset()
-
-# Pushing Data (Input)
-import random
-message = random.sample(range(0xFFFFFFFF), 100)
+message = secrets.SystemRandom().sample(range(0xFFFFFFFF), 100)
 for chunk in message:
   push(chunk)
 

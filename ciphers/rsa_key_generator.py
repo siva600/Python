@@ -1,6 +1,7 @@
 from __future__ import print_function
-import random, sys, os
+import sys, os
 import rabin_miller as rabinMiller, cryptomath_module as cryptoMath
+import secrets
 
 def main():
     print('Making key files...')
@@ -16,7 +17,7 @@ def generateKey(keySize):
 
     print('Generating e that is relatively prime to (p - 1) * (q - 1)...')
     while True:
-        e = random.randrange(2 ** (keySize - 1), 2 ** (keySize))
+        e = secrets.SystemRandom().randrange(2 ** (keySize - 1), 2 ** (keySize))
         if cryptoMath.gcd(e, (p - 1) * (q - 1)) == 1:
             break
 

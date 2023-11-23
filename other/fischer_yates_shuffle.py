@@ -5,12 +5,12 @@ The Fisher–Yates shuffle is an algorithm for generating a random permutation o
 For more details visit
 wikipedia/Fischer-Yates-Shuffle.
 """
-import random
+import secrets
 
 def FYshuffle(LIST):
     for i in range(len(LIST)):
-        a = random.randint(0, len(LIST)-1)
-        b = random.randint(0, len(LIST)-1)
+        a = secrets.SystemRandom().randint(0, len(LIST)-1)
+        b = secrets.SystemRandom().randint(0, len(LIST)-1)
         LIST[a], LIST[b] = LIST[b], LIST[a]
     return LIST
 
