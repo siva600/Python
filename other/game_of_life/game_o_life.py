@@ -28,14 +28,15 @@ Game-Of-Life Rules:
  comes a live cell, as if by reproduction.
  '''
 import numpy as np
-import random, sys
+import sys
 from matplotlib import pyplot as plt
 from matplotlib.colors import ListedColormap
+import secrets
 
 usage_doc='Usage of script: script_nama <size_of_canvas:int>'
 
 choice = [0]*100 + [1]*10
-random.shuffle(choice)
+secrets.SystemRandom().shuffle(choice)
 
 def create_canvas(size):
     canvas = [ [False for i in range(size)] for j in range(size)]
@@ -44,7 +45,7 @@ def create_canvas(size):
 def seed(canvas):
     for i,row in enumerate(canvas):
         for j,_ in enumerate(row):
-            canvas[i][j]=bool(random.getrandbits(1))
+            canvas[i][j]=bool(secrets.SystemRandom().getrandbits(1))
 
 def run(canvas):
     ''' This  function runs the rules of game through all points, and changes their status accordingly.(in the same canvas)
