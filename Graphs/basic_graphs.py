@@ -59,7 +59,7 @@ for _ in xrange(m):
 
 
 def dfs(G, s):
-    vis, S = set([s]), [s]
+    vis, S = {s}, [s]
     print(s)
     while S:
         flag = 0
@@ -87,7 +87,7 @@ from collections import deque
 
 
 def bfs(G, s):
-    vis, Q = set([s]), deque([s])
+    vis, Q = {s}, deque([s])
     print(s)
     while Q:
         u = Q.popleft()
@@ -263,7 +263,7 @@ def krusk(E_and_n):
     # Sort edges on the basis of distance
     (E, n) = E_and_n
     E.sort(reverse=True, key=lambda x: x[2])
-    s = [set([i]) for i in range(1, n + 1)]
+    s = [{i} for i in range(1, n + 1)]
     while True:
         if len(s) == 1:
             break
