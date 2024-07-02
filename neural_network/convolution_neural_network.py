@@ -19,6 +19,7 @@ from __future__ import print_function
 
 import numpy as np
 import matplotlib.pyplot as plt
+import fickling
 
 class CNN():
 
@@ -72,10 +73,8 @@ class CNN():
 
     @classmethod
     def ReadModel(cls,model_path):
-        #read saved model
-        import pickle
         with open(model_path, 'rb') as f:
-            model_dic = pickle.load(f)
+            model_dic = fickling.load(f)
 
         conv_get= model_dic.get('conv1')
         conv_get.append(model_dic.get('step_conv1'))
