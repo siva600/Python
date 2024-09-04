@@ -10,8 +10,7 @@
 
 '''
 from __future__ import print_function
-
-import random
+import secrets
 
 
 class Perceptron:
@@ -30,7 +29,7 @@ class Perceptron:
             sample.insert(0, self.bias)
 
         for i in range(self.col_sample):
-           self.weight.append(random.random())
+           self.weight.append(secrets.SystemRandom().random())
 
         self.weight.insert(0, self.bias)
 
