@@ -1,7 +1,7 @@
 from collections import deque
-import random as rand
 import math as math
 import time
+import secrets
 
 # the dfault weight is 1 if not assigend but all the implementation is weighted
 
@@ -74,12 +74,12 @@ class DirectedGraph:
 	# will be random from 10 to 10000
 	def fill_graph_randomly(self, c = -1):
 		if c == -1:
-			c = (math.floor(rand.random() * 10000)) + 10
+			c = (math.floor(secrets.SystemRandom().random() * 10000)) + 10
 		for _ in range(c):
 			# every vertex has max 100 edges
-			e = math.floor(rand.random() * 102) + 1
+			e = math.floor(secrets.SystemRandom().random() * 102) + 1
 			for __ in range(e):
-				n = math.floor(rand.random() * (c)) + 1
+				n = math.floor(secrets.SystemRandom().random() * (c)) + 1
 				if n == _:
 					continue
 				self.add_pair(_, n, 1)
@@ -330,12 +330,12 @@ class Graph:
 	# will be random from 10 to 10000
 	def fill_graph_randomly(self, c = -1):
 		if c == -1:
-			c = (math.floor(rand.random() * 10000)) + 10
+			c = (math.floor(secrets.SystemRandom().random() * 10000)) + 10
 		for _ in range(c):
 			# every vertex has max 100 edges
-			e = math.floor(rand.random() * 102) + 1
+			e = math.floor(secrets.SystemRandom().random() * 102) + 1
 			for __ in range(e):
-				n = math.floor(rand.random() * (c)) + 1
+				n = math.floor(secrets.SystemRandom().random() * (c)) + 1
 				if n == _:
 					continue
 				self.add_pair(_, n, 1)
