@@ -1,4 +1,4 @@
-import random
+import secrets
 
 """
 A python implementation of the quick select algorithm, which is efficient for calculating the value that would appear in the index of a list if it would be sorted, even if it is not already sorted
@@ -26,7 +26,7 @@ def quickSelect(list, k):
     #k = len(list) // 2 when trying to find the median (index that value would be when list is sorted)
     smaller = []
     larger = []
-    pivot = random.randint(0, len(list) - 1)
+    pivot = secrets.SystemRandom().randint(0, len(list) - 1)
     pivot = list[pivot]
     count = 0
     smaller, equal, larger =_partition(list, pivot)

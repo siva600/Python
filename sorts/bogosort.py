@@ -9,7 +9,7 @@ python bogosort.py
 """
 
 from __future__ import print_function
-import random
+import secrets
 
 
 def bogosort(collection):
@@ -35,7 +35,7 @@ def bogosort(collection):
         return True
 
     while not isSorted(collection):
-        random.shuffle(collection)
+        secrets.SystemRandom().shuffle(collection)
     return collection
 
 if __name__ == '__main__':
