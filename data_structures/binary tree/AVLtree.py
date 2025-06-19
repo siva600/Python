@@ -3,7 +3,8 @@
 An auto-balanced binary tree!
 '''
 import math
-import random
+import secrets
+
 class my_queue:
     def __init__(self):
         self.data = []
@@ -244,12 +245,12 @@ if __name__ == "__main__":
     t = AVLtree()
     t.traversale()
     l = list(range(10))
-    random.shuffle(l)
+    secrets.SystemRandom().shuffle(l)
     for i in l:
         t.insert(i)
         t.traversale()
         
-    random.shuffle(l)
+    secrets.SystemRandom().shuffle(l)
     for i in l:
         t.del_node(i)
         t.traversale()
